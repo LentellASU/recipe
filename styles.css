@@ -121,13 +121,13 @@ article p:last-of-type {
     grid-area: rating;
 }
 
-/* Optional styling to ensure there's no unnecessary spacing */
+
 article {
     margin-bottom: 20px;
 }
 
 article img {
-    max-width: 100px; /* Adjust as needed */
+    max-width: 100px;
     display: block;
 }
 
