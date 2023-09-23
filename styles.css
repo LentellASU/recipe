@@ -80,12 +80,12 @@ time,
 mark,
 audio,
 video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -100,34 +100,34 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+    display: block;
 }
 
 body {
-	line-height: 1;
+    line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+    list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+    quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content: "";
-	content: none;
+    content: "";
+    content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* end css reset */
@@ -140,56 +140,89 @@ table {
     --light-teal: rgba(122, 191, 191, 0.5);
     --orange: #EB5428;
 }
+
 /* Typography */
-h1, h2, h3, nav a, nav span, menu li, #social li, footer {
+h1,
+h2,
+h3,
+nav a,
+nav span,
+menu li,
+#social li,
+footer {
     font-family: 'Bebas Neue', sans-serif;
     font-weight: 400;
 }
-p, dd, li, nav, input {
+
+p,
+dd,
+li,
+nav,
+input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
 }
+
 dt {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
+
 h1 {
     font-size: 40px;
     text-align: center;
 }
+
 h2 {
     font-size: 30px;
     text-align: center;
 }
+
 h3 {
     font-size: 25px;
-    text-align: center;    
+    text-align: center;
 }
-nav a, nav span, menu li, #social li, footer {
+
+nav a,
+nav span,
+menu li,
+#social li,
+footer {
     font-size: 20px;
 }
-p, dd, li, nav, input, dt {
+
+p,
+dd,
+li,
+nav,
+input,
+dt {
     font-size: 16px;
 }
+
 /* Main */
-html{
+html {
     box-sizing: border-box;
     background-color: var(--light-teal);
 }
+
 body {
     margin: 0 auto;
     width: 100%;
     max-width: 414px;
     background-color: var(--off-white);
 }
+
 .container {
     display: flex;
     flex-direction: column;
 }
-menu{
+
+menu {
     margin: 0;
-    padding:0;
+    padding: 0;
 }
+
 menu ul {
     display: flex;
     justify-content: space-between;
@@ -198,7 +231,7 @@ menu ul {
     margin-right: 10px;
 }
 
-menu li a{
+menu li a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -207,25 +240,31 @@ menu li a{
     margin: 0;
     padding: 0;
 }
+
 menu section {
     background-color: var(--off-white);
 }
+
 menu p {
     padding: 10px;
     line-height: 1.5;
 }
+
 header {
     order: 2;
 }
-header section img{
+
+header section img {
     width: 100%;
 }
+
 #details {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    margin: 10px; 
+    margin: 10px;
 }
+
 #details h2 {
     margin: 10px;
 }
@@ -236,26 +275,34 @@ header section img{
     margin-bottom: 5px;
     margin-top: 0;
 }
-ul, ol{
+
+ul,
+ol {
     margin-top: 0;
     padding-left: 25px;
 }
+
 main {
     order: 3;
 }
+
 main section {
     line-height: 2;
 }
+
 main section h2 {
     margin: 10px;
 }
+
 main section ul {
     list-style: square;
 }
+
 main section ol {
     list-style: number;
     margin: 5px;
 }
+
 /* Aside */
 aside {
     background-color: var(--dark-teal);
@@ -263,12 +310,14 @@ aside {
     margin-bottom: 20px;
     order: 4;
 }
+
 aside h2 {
     text-align: center;
     margin-bottom: 20px;
     margin-top: 10px;
 }
-aside section{
+
+aside section {
     display: grid;
     grid-template-areas:
         "image title"
@@ -305,26 +354,33 @@ aside .rating {
 aside {
     margin-bottom: 20px;
 }
+
 aside a {
     text-decoration: none;
     color: var(--black)
 }
+
 aside img {
     max-width: 100px;
     display: block;
 }
+
 aside h3 {
     margin-bottom: 10px;
 }
+
 aside .rating dl {
     display: flex;
 }
+
 aside .rating dd {
     margin: 0;
 }
+
 aside .rating dt {
     margin-right: 5px;
 }
+
 aside .rating svg {
     display: inline-block;
     vertical-align: middle;
@@ -336,15 +392,22 @@ aside .rating svg {
 nav {
     order: 1;
 }
+
 nav h3 {
     display: none;
 }
+
 #hamburger {
     display: none;
 }
-nav ul li:not(:first-child):not(:nth-child(2)):not(:last-child) {
+
+.recipes {
     display: none;
 }
+
+/* nav ul li a img {
+    width: 50%;
+} */
 nav ul {
     display: flex;
     justify-content: space-between;
@@ -354,28 +417,31 @@ nav ul {
     border-bottom: 1px solid black;
     margin-bottom: 20px;
 }
+
 nav li a {
     color: var(--black);
-    text-decoration: none;
-}
-nav ul li:first-child, nav ul li:last-child {
-    flex: 1;
-}
-nav ul li:nth-child(2) {
-    background-color: var(--orange);
-    flex: 2;
-    text-align: center;
-    
-}
-nav ul li a {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
 }
-nav ul li a svg {
-    margin-bottom: 8px;
+
+nav ul li#hamburger,
+nav ul li#avatar {
+    flex: 1;
 }
+
+nav ul li#home {
+    background-color: var(--orange);
+    flex: 2;
+    text-align: center;
+
+}
+
+nav ul li a svg {
+    margin-bottom: 2px;
+}
+
 #search-bar {
     height: 40px;
     border: none;
@@ -386,19 +452,24 @@ nav ul li a svg {
 #search-bar:focus {
     box-shadow: 0 0 5px var(--orange);
 }
+
 nav div {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
 }
+
 /* footer */
 footer {
     background-color: #ffffff;
     order: 5;
 }
-footer h3, footer h2 {
+
+footer h3,
+footer h2 {
     display: none;
 }
+
 footer ul {
     display: flex;
     justify-content: space-between;
@@ -408,10 +479,12 @@ footer ul {
     margin-bottom: 20px;
     margin-top: 40px;
 }
+
 footer ul img {
     display: block;
 }
-footer li a{
+
+footer li a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -420,22 +493,141 @@ footer li a{
     margin: 0;
     padding: 0;
 }
-footer > section:last-of-type {
+
+footer>section:last-of-type {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 
 }
-footer > section:last-of-type p {
+
+footer>section:last-of-type p {
     order: 2;
     color: var(--black);
     font-family: "Bebas neue", sans-serif;
     font-weight: 700;
 }
-footer > section:last-of-type p:first-of-type {
+
+footer>section:last-of-type p:first-of-type {
     margin-top: 15px;
 }
+
 footer img {
     width: 50%;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        max-width: 768px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    nav ul li#hamburger {
+        display: none;
+    }
+
+    nav ul li#home {
+        flex: none;
+        order: 1;
+    }
+
+    nav ul li#avatar {
+        flex: none;
+        order: 3;
+        margin-right: 10px;
+    }
+
+    nav div.search {
+        position: absolute;
+        top: 10px;
+        right: 80px;
+        flex-grow: 1;
+        order: 2;
+    }
+
+    .recipes {
+        display: flex;
+        width: 100%;
+        order: 4;
+        margin-top: 20px;
+    }
+
+    .recipes img {
+        width: 50%;
+    }
+
+    header section p {
+        margin: 10px;
+        line-height: 1.5;
+    }
+
+    #details dl {
+        justify-content: center;
+    }
+
+    #ingredients {
+        width: 35%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    #directions {
+        width: 60%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    #ingredients,
+    #directions {
+        margin-right: 2%;
+    }
+
+    aside {
+        display: grid;
+        grid-template-areas:
+            "title title"
+            "mexicanrice salsa"
+            "guacamole tortillas";
+        grid-template-columns: auto 1fr;
+        grid-gap: 10px;
+        text-align: left;
+    }
+
+    #title {
+        grid-area: title;
+    }
+
+    #mexicanrice {
+        grid-area: mexicanrice;
+    }
+
+    #salsa {
+        grid-area: salsa;
+    }
+
+    #guacamole {
+        grid-area: guacamole;
+    }
+
+    #tortillas {
+        grid-area: tortillas;
+    }
+    footer {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    footer section {
+        margin-top: 20px;
+    }
+    footer section img {
+        margin-top: 20px;
+    }
+    footer ul li{
+        margin-right: 20px;
+    }
 }
