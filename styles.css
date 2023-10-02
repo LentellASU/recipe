@@ -223,16 +223,12 @@ body {
 }
 
 menu {
-	margin: 0;
-	padding: 0;
-}
-
-menu ul {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	list-style: none;
 	margin: 0 10px 0 0;
+	padding: 0;
 }
 
 menu li a {
@@ -261,7 +257,9 @@ header {
 header section img {
 	width: 100%;
 }
-
+header section h3 {
+	display: none;
+}
 #details {
 	display: flex;
 	flex-direction: column;
@@ -320,8 +318,11 @@ aside h2 {
 	margin-bottom: 20px;
 	margin-top: 10px;
 }
-
+aside h4 {
+	display: none;
+}
 aside section {
+	margin-top: 10px;
 	display: grid;
 	grid-template-areas:
 		"image title"
@@ -339,13 +340,14 @@ aside img {
 	max-width: 100px;
 }
 
-aside h3 {
+aside section h3 {
 	grid-area: title;
 	text-align: left;
 	margin: 0;
+	margin-bottom: 10px;
 }
 
-aside p {
+aside section p {
 	grid-area: description;
 	margin: 0;
 }
@@ -355,22 +357,10 @@ aside .rating {
 	margin: 0;
 }
 
-aside {
-	margin-bottom: 20px;
-}
 
 aside a {
 	text-decoration: none;
 	color: var(--black);
-}
-
-aside img {
-	max-width: 100px;
-	display: block;
-}
-
-aside h3 {
-	margin-bottom: 10px;
 }
 
 aside .rating dl {
@@ -396,14 +386,17 @@ aside .rating svg {
 nav {
 	order: 1;
 	position: relative;
+	width: 100%;
+
 }
 
 nav h3 {
 	display: none;
 }
 
-#hamburger-checkbox {
-	display: none;
+.recipes li {
+    flex: 1; 
+    text-align: center; 
 }
 
 .recipes li a {
@@ -411,31 +404,44 @@ nav h3 {
 }
 
 .recipes img {
-	width: 60%;
+	width: 70%;
+}
+
+nav li a {
+	color: var(--black);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-decoration: none;
 }
 
 .recipes {
-	display: none;
-	position: absolute;
-	top: 55%;
-	left: 0;
-	width: 100%;
-	background-color: var(--off-white);
-	z-index: 1;
+    display: none;
+    position: absolute;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    top: 55%;
+    left: 0;
+    width: 100%;
+    background-color: var(--off-white);
+    z-index: 1;
+	border-bottom: 1px solid black;
+}
+
+.recipes li {
+    flex: 1;
+    text-align: center;
+	width: 50%;
 }
 
 #hamburger-checkbox {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 10px;
+	left: 30px;
 	opacity: 0;
-	z-index: -1;
-	width: 0;
-	height: 0;
-}
-
-#hamburger-checkbox:checked ~ .recipes {
-	display: flex;
+	width: 40px;
+	height: 40px;
 }
 
 #hamburger {
@@ -445,12 +451,25 @@ nav h3 {
 }
 
 #hamburger label {
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	z-index: 1;
+    cursor: pointer;
 	font-family: "Bebas neue", sans-serif;
 }
+
+#hamburger svg {
+    pointer-events: none;
+}
+
+
+#hamburger-checkbox:checked + label + .recipes {
+	display: flex;
+}
+
 
 .recipes li a {
 	font-size: 12px;
@@ -463,17 +482,10 @@ nav ul {
 	align-items: center;
 	padding: 0;
 	margin: 0;
-	border-bottom: 1px solid black;
 	margin-bottom: 20px;
 }
 
-nav li a {
-	color: var(--black);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-decoration: none;
-}
+
 
 nav li a:hover, #hamburger:hover, menu li a:hover, footer li a:hover  {
     background-color: var(--dark-teal);
@@ -484,20 +496,25 @@ nav li a:hover, #hamburger:hover, menu li a:hover, footer li a:hover  {
     fill: var(--dark-teal)
 }
 
-nav ul li#hamburger,
+nav ul li#hamburger {
+	flex: 1;
+	order: 1;
+}
 nav ul li#avatar {
 	flex: 1;
+	order: 3;
 }
-
 nav ul li#home {
 	background-color: var(--orange);
 	flex: 2;
 	text-align: center;
+	order: 2;
 }
 
 nav ul li a svg {
 	margin-bottom: 2px;
 }
+
 
 #search-bar {
 	height: 40px;
@@ -510,7 +527,7 @@ nav ul li a svg {
 	box-shadow: 0 0 5px var(--orange);
 }
 
-nav div {
+.search {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 20px;
@@ -576,15 +593,21 @@ footer img {
 	}
 
 	nav {
-		position: relative;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 80px;
 	}
 
 	nav ul {
+		flex: 1;
+		display: flex;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		margin-bottom: 20px;
+		border-bottom: none;
 	}
 
-	nav ul li#hamburger {
+	#hamburger > label > svg, #hamburger > label, #hamburger-checkbox{
 		display: none;
 	}
 
@@ -592,39 +615,44 @@ footer img {
 		flex: none;
 		order: 1;
 	}
+	
+	.search {
+		position: absolute;
+		order: 3;
+		right: 130px;
+	}
+	nav ul li#hamburger {
+		flex: none;
+		order: 2;
+	}
 
 	nav ul li#avatar {
 		flex: none;
-		order: 3;
+		order: 4;
 		margin-right: 10px;
 	}
 
-	nav div.search {
-		position: absolute;
-		top: 10px;
-		right: 80px;
-		flex-grow: 1;
-		order: 2;
-	}
 
 	header h1 {
 		text-align: left;
 		margin-left: 10px;
 	}
-
-	menu ul {
+	.content-wrapper {
+		position: relative;
+	}
+	menu {
 		position: absolute;
-		margin-right: 20px;
+		top: 0;
+		left: 0;
+		margin-right: 0;
 		justify-content: space-evenly;
-		width: 87%;
+		width: 100%;
 		background-color: rgba(218, 245, 245, 0.5);
 	}
 
 	.recipes {
 		display: flex;
-		position: initial;
 		width: 100%;
-		order: 4;
 		margin-top: 20px;
 	}
 
@@ -701,7 +729,9 @@ footer img {
 	footer section {
 		margin-top: 20px;
 	}
-
+	footer section ul li {
+		margin-right: 20px;
+	}
 	footer section img,
 	footer ul li {
 		margin-top: 20px;
@@ -720,8 +750,9 @@ footer img {
 
 	.content-wrapper {
 		display: flex;
+		flex-direction: row;
 		width: 100%;
-		align-items: flex-start;
+		align-items:stretch;
 	}
 
 	menu {
@@ -731,12 +762,13 @@ footer img {
 		margin-right: 20px;
 	}
 
-	menu ul {
+	menu {
 		position: initial;
 		display: flex;
 		flex-direction: column;
 		list-style: none;
 		padding: 0;
+		background-color: var(--off-white);
 	}
 
 	menu li a {
@@ -751,7 +783,6 @@ footer img {
 	.menu-container {
 		border: 2px solid var(--orange);
 		padding: 10px;
-		height: 434px;
         text-align: center;
 	}
 
@@ -788,14 +819,6 @@ footer img {
 
 	#details dt {
 		margin: 0;
-	}
-
-	nav div.search {
-		position: relative;
-		top: 0;
-		right: 0;
-		flex-grow: 1;
-		order: 2;
 	}
 
 	aside {
@@ -858,33 +881,46 @@ footer img {
 	}
 	footer {
 		display: flex;
-		justify-content: space-between; /* Spread content apart */
-		padding: 20px; /* Added some padding for visual space */
+		justify-content: space-between;
+		padding: 20px;
 	}
 
 	footer section {
-		margin-top: 40px; /* Increased vertical margin */
+		margin-top: 40px;
 	}
 
 	footer section img {
-		margin-top: 30px; /* Adjusted image top margin */
-		width: 40%; /* Increased image size */
+		margin-top: 30px;
+		width: 40%;
 	}
 
 	footer ul li {
-		margin-right: 40px; /* Increased horizontal margin between list items */
+		margin-right: 40px;
 	}
 
 	footer ul {
-		margin-top: 60px; /* Increased vertical margin for the list */
+		margin-top: 60px;
 	}
 
 	footer img {
-		width: 60%; /* Increased image size in the footer */
+		width: 60%;
 	}
 
 	footer > section:last-of-type p:first-of-type {
-		margin-top: 25px; /* Adjusted margin for the first paragraph */
+		margin-top: 25px;
+	}
+
+	nav {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-bottom: 20px;
+	}
+
+	.search {
+		position: initial;
+		order: 4;
+		width: 100%;
 	}
 	nav ul {
 		flex-wrap: nowrap;
@@ -892,13 +928,17 @@ footer img {
 	nav #home {
 		order: 1;
 	}
-	nav .recipes {
-		justify-content: space-evenly;
-		margin-left: 75px;
-		margin-right: 75px;
+	.recipes img {
+		width: 40%;
+	}
+	.recipes {
+		position: relative;
 		order: 2;
 	}
-	nav#avatar {
+	#avatar {
 		order: 3;
+	}
+	nav ul li#hamburger {
+		flex: 1;
 	}
 }
